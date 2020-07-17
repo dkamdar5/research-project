@@ -1,0 +1,75 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  background-image: url(travel4.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.header{
+  text-align: center;
+  color: #fff;
+  font-family: avenir;
+}
+.header img{
+  width: 170px;
+  float: left;
+  margin-left: 100px;
+  margin-top: -30px;
+  cursor: pointer;
+}
+.login-btn{
+  width: 100px;
+  padding: 8px 0;
+  margin-top: 30px;
+  outline: none !important;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  background: transparent;
+  color: #fff;
+  float: right;
+  font-family: avenir;
+  font-weight: bold;
+}
+.search{
+  text-align: center;
+  margin-top: 40%;
+  color: #fff;
+}
+.searchtext{
+  padding-top: 5px;
+}
+.searchtext h1{
+  padding-top: 650px;
+  padding-bottom: 0;
+  font-size: 45px;
+}
+.searchtext p{
+  font-size: 20px;
+  text-align: center;
+}
+.input-group{
+  width: 90%;
+  max-width: 500px;
+  border-radius: 30px;
+  background: #fff;
+  margin-left: 31%;
+}
+.form-control{
+  border: 0 !important;
+  border-radius: 30px 0 0 30px !important;
+  margin: 2px;
+  box-shadow: none !important;
+}
+.input-group-text{
+  width: 100px;
+  border: 0 !important;
+  padding: 0 25px !important;
+  border-radius: 30px !important;
+  box-shadow: none !important;
+}
+.input-group-text:hover{
+  background-color: turquoise;
+}
