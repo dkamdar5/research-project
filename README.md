@@ -1,22 +1,14 @@
 # research-project
 
 ## Setup
-Python version 3+
+Python version 3+. Make sure certificates are installed.
 
-For Pip, install: pip3 install
+For Pip, install the dependencies below.
 pymongo
-dnspython?
+dnspython
 
-Get connection string from MongoDB Atlas and set as environment variable.
+Get connection string from MongoDB Atlas and set as variable 'connectionString' in a file called config.py.
 
-running the database - python3 filename.py
-
-create a static folder - add photos and the css file
-create a templates folder - add html file
-
-pip3 install flask
-    create a file app.py
-    connect it to html
-    export FLASK_APP=app.py
-    flask run
-    test the http: 127.0.0.....
+## Flask
+$ export FLASK_APP=app.py
+$ flask run
