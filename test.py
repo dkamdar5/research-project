@@ -2,11 +2,12 @@ from pymongo import MongoClient
 import dns # required for connecting with SRV
 import os
 #from pprint import pprint
+import config
 
 connectionString = os.getenv('connectionString')
 
 # connect to MongoDB
-client = MongoClient("mongodb+srv://admin:admin@cluster0.29f5c.mongodb.net/test?retryWrites=true&w=majority")
+client = MongoClient(config.connectionString)
 
 print("Database names:")
 for name in client.list_database_names():
