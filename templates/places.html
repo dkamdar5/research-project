@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} List of Places {% endblock %}</h1>
+    {% for place in places %}
+        <a href="{{ url_for('place', place_id=place['_id']) }}">
+            <h2>{{ place['name'] }}</h2>
+        </a>
+        <span class="badge badge-primary">{{ place['_id'] }}</span>
+        <hr>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{% block title %} {{ place['name'] }} {% endblock %}</h2>
+    <span class="badge badge-primary">{{ place['_id'] }}</span>
+    <p>{{ place['location'] }}</p>
+{% endblock %}
