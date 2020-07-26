@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %} <h1> Places </h1>{% endblock %}
+
+{% block content %}
+    <form action="{{ url_for('places_new') }}" method="post">
+        <label for="place">Name of Place</label>
+        <input type="text" name="place">
+        <label for="location">Location</label>
+        <input type="text" name="location">
+        <input type="submit">
+    </form>
+{% endblock %}   

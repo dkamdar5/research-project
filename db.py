@@ -25,3 +25,7 @@ def get_place(place_id):
         abort(404)
 
     return(results[0])
+
+def set_place(name, location):
+    place = {"name": name, "location": location} 
+    results = places_collection.insert_one(place)
