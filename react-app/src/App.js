@@ -1,32 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Places from "./pages/Places";
+
 import './App.css';
 
 function App() {
-  const [places, setPlaces] = useState();
-
-  useEffect(() => {
-    fetch('/api/places').then(res => res.json()).then(data => {
-      setPlaces(JSON.parse(data))
-      console.log(data)
-    })
-  }, [])
-
   return (
     <div className="App">
-      <header className="App-header">
-        <ul>
-          { places && 
-            places.map((v, i) => {
-              return (
-                <>
-                  <li key={i}>Name: {v["name"]}</li>
-                  <li key={i}>Location: {v["location"]}</li>
-                </>
-              )
-            })
-          }
-        </ul>
-      </header>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/places">
+            <Places />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
