@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Places = () => {
     const [places, setPlaces] = useState();
@@ -17,6 +18,7 @@ const Places = () => {
               places.map((v, i) => {
                 return (
                   <>
+                    <Link to={`/places/${v["_id"]["$oid"]}`}>Go to {v["name"]}</Link>
                     <li key={i}>Name: {v["name"]}</li>
                     <li key={i}>Location: {v["location"]}</li>
                   </>
