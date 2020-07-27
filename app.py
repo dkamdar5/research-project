@@ -33,4 +33,10 @@ def place(place_id):
 def api_places():
     places = db.get_places()
     encoded = dumps(places)
-    return jsonify(encoded) 
+    return jsonify(encoded)
+
+@app.route('/api/places/<string:place_id>')
+def api_place(place_id):
+    place = db.get_place(place_id)
+    encoded = dumps(place)
+    return jsonify(encoded)
