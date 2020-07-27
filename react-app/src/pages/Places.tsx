@@ -1,23 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Place from '../models/place';
+import * as db from '../services/db';
 
 const Places = () => {
     const [places, setPlaces] = useState<Place[]>();
 
     useEffect(() => {
-        fetch('/api/places').then(res => res.json()).then(data => {
-          let dataObj = JSON.parse(data);
-          const places = dataObj.map((v, i) => {
-            return {
-              id: v["_id"]["$oid"],
-              name: v["name"],
-              location:v["location"]
-            }
-          })
-          setPlaces(places)
-        })
-      }, [])
+      const getPlaces = async () => {
+        const data = await db.getPlaces();
+        setPlaces(data)
+      }
+
+      getPlaces();
+    }, [])
 
     return (
         <div>

@@ -1,22 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import * as PlaceModel from '../models/place';
+import * as db from '../services/db';
 
 const Place = () => {
     let { id } = useParams();
     const [place, setPlace] = useState<PlaceModel.default>();
 
     useEffect(() => {
-        fetch(`/api/places/${id}`).then(res => res.json()).then(data => {
-          const dataObj = JSON.parse(data)
-          const place = {
-            id: dataObj["_id"]["$oid"],
-            name: dataObj["name"],
-            location: dataObj["location"]
-          }
-          setPlace(place)
-        })
-      }, [])
+      const getPlace = async () => {
+        const data = await db.getPlace(id);
+        setPlace(data)
+      }
+
+      getPlace();
+    }, [])
 
     return (
         <div>
